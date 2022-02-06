@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import './styles.css';
 
 function Statistics(props) {
-  console.log(props.details);
+  // console.log(props.details);
   return (
     <div className='statistic-wrapper'>
       <div className='card'>

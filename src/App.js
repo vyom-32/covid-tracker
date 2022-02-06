@@ -9,7 +9,7 @@ function App() {
   const [countriesList, setCountriestList] = useState([
     {
       value: 'all',
-      label: 'world wide',
+      label: 'World Wide',
     },
   ]);
   const [SearchText, setSearchText] = useState('all');
@@ -29,7 +29,6 @@ function App() {
       });
       let result = await response.json();
       setDetails(result);
-      console.log('details', details);
     } catch (err) {
       console.log(err);
     }
@@ -45,7 +44,7 @@ function App() {
         },
       });
       const result = await response.json();
-      let list = [];
+      let list = [{ label: 'World wide', value: 'all' }];
       result.map((element) => {
         list.push({ value: element.country, label: element.country });
       });
