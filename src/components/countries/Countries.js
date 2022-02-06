@@ -109,7 +109,9 @@ function Countries() {
                   </tr>
                 </table>
               </summary>
-              <Statistics details={element} />
+              <div className='statistics'>
+                <Statistics details={element} />
+              </div>
             </details>
           </React.Fragment>
         );
