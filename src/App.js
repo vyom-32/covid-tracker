@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Statistics from './components/statistics/Statistics';
 import Countries from './components/countries/Countries';
 import Select from 'react-select';
+import api_key from './keys';
 
 function App() {
   const [details, setDetails] = useState({});
@@ -23,8 +24,7 @@ function App() {
         method: 'GET',
         headers: {
           'x-rapidapi-host': 'covid-193.p.rapidapi.com',
-          'x-rapidapi-key':
-            '1f62fd6d98msh4c482cf1eded21fp16d20bjsna808728d0e05',
+          'x-rapidapi-key': api_key,
         },
       });
       let result = await response.json();
@@ -39,8 +39,7 @@ function App() {
         method: 'GET',
         headers: {
           'x-rapidapi-host': 'covid-193.p.rapidapi.com',
-          'x-rapidapi-key':
-            '1f62fd6d98msh4c482cf1eded21fp16d20bjsna808728d0e05',
+          'x-rapidapi-key': api_key,
         },
       });
       const result = await response.json();

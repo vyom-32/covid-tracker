@@ -2,6 +2,7 @@ import React, { useState, useEffect, memo } from 'react';
 import Statistics from '../statistics/Statistics';
 import Select from 'react-select';
 import './styles.css';
+import api_key from '../../keys';
 
 function Countries() {
   const [countriesData, setCountriesData] = useState([]);
@@ -27,7 +28,13 @@ function Countries() {
   }, []);
   async function getCountryDetails() {
     const Url = 'https://disease.sh/v3/covid-19/countries';
-    const res = await fetch(Url);
+    const res = await fetch(Url, {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-host': 'covid-193.p.rapidapi.com',
+        'x-rapidapi-key': api_key,
+      },
+    });
     const data = await res.json();
     console.log(data);
     let countryDeatails = [];
